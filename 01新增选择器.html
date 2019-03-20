@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			/*1.属性选择器*/
+			[data-index]{
+				color: gold;
+			}
+			[name]{
+				color: blue;
+			}
+			/*匹配data-index属性等于10的元素;*/
+			[data-index="10"]{
+				background: red;
+			}
+			/*匹配data-index属性以10开头的元素;*/
+			[data-index^="10"]{
+				font-size: 30px;
+			}
+			/*匹配data-index属性以10结尾的元素;*/
+			[data-index$="10"]{
+				font-weight: 900;
+			}
+		/*	 匹配data-index属性包含10的元素;*/
+			[data-index*="10"]{
+				text-decoration: underline;
+			}
+			
+			/*2.+: 相邻兄弟选择器*/
+			.li3+li{
+				background: red;
+			}
+			
+			/*3.  ~: 通用兄弟选择器*/
+			.li3~li{
+				color: blue;
+			}
+			
+			/*4.  :not (x)、*/
+			li:not(.li3){
+				font-size: 30px;
+			}
+			
+			/*5.  伪元素选择器*/
+			.li3:before{
+				/*伪类选择器	*/
+			}
+			.li3::before{
+				content: "123";
+			}
+			
+			/*nth-child*/
+			/*.box a:nth-child(3){
+				color: red;
+			}*/
+			.box a:nth-child(2n-1){
+				color: red;
+			}
+			.box a:nth-child(n+4){
+				background: gold;
+			}
+			.box a:nth-child(-n+4){
+				background: blue;
+			}
+			
+			
+		</style>
+	</head>
+	<body>
+		<p data-index = "100">啥恐惧点击开始</p>
+		<p data-index = "10">收到货就开始对话框几十块</p>
+		<p data-index = "101">收到货就开始对话框几十块</p>
+		<p name="like2">收到货就开始对话框几十块</p>
+		<ul>
+			<li>1</li>
+			<li>2</li>
+			<li class="li3">3</li>
+			<li>4</li>
+			<li>5</li>
+		</ul>
+		<div class="box">
+			<a href="#">百度1</a>
+			<a href="#">百度2</a>
+			<a href="#">百度3</a>
+			<a href="#">百度4</a>
+			<a href="#">百度5</a>
+			<a href="#">百度6</a>
+			<a href="#">百度7</a>
+			<a href="#">百度8</a>
+		</div>
+	</body>
+</html>

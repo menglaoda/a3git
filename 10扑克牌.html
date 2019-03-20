@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			.obox{
+				width: 250px;
+				height: 350px;
+				position: relative;
+				margin: 100px auto;
+			}
+			.box1{
+				position: absolute;
+				top: 0px;
+				left: 0px;
+				width: 250px;
+				height: 350px;
+				border: solid 1px #ccc;
+				background: white;
+				border-radius: 10px;
+				transition: all 1s;
+				transform-origin: center bottom;
+			}
+			.span1{
+				display: block;
+				transform: translate(10px,10px);
+			}
+			.span2{
+				display: block;
+				transform: translate(-10px,300px) rotate(180deg);
+			}
+			.box2{
+				width: 80px;
+				height: 80px;
+				background: red;
+				transform: translate(85px,125px) rotate(45deg);
+				position: relative;
+			}
+			.box2::before{
+				content: "";
+				position: absolute;
+				left: 0px;
+				top: -45px;
+				width: 80px;
+				height: 80px;
+				background: red;
+				border-radius: 50%;
+			}
+			.box2::after{
+				content: "";
+				position: absolute;
+				left: -45px;
+				top: 0px;
+				width: 80px;
+				height: 80px;
+				background: red;
+				border-radius: 50%;
+			}
+			.obox:hover .box1:nth-child(1){
+				transform: rotate(-10deg);
+			}
+			.obox:hover .box1:nth-child(2){
+				transform: rotate(10deg);
+			}
+			.obox:hover .box1:nth-child(3){
+				transform: rotate(30deg);
+			}
+			.obox:hover .box1:nth-child(4){
+				transform: rotate(50deg);
+			}
+		</style>
+	</head>
+	<body>
+		<div class="obox">
+			<div class="box1">
+				<span class="span1">A</span>
+				<span class="span2">A</span>
+				<div class="box2"></div>
+			</div>
+			<div class="box1">
+				<span class="span1">A</span>
+				<span class="span2">A</span>
+				<div class="box2"></div>
+			</div>
+			<div class="box1">
+				<span class="span1">A</span>
+				<span class="span2">A</span>
+				<div class="box2"></div>
+			</div>
+			<div class="box1">
+				<span class="span1">A</span>
+				<span class="span2">A</span>
+				<div class="box2"></div>
+			</div>
+		</div>
+	</body>
+</html>
